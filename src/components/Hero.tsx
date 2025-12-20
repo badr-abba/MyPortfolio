@@ -94,23 +94,6 @@ const Hero = () => {
             transition={{ duration: 0.8 }}
             className="flex-1 text-center lg:text-left"
           >
-            {/* Open to Work Badge */}
-            {profile.openToWork && (
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1 }}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-success/10 border border-success/30 text-success mb-6 open-to-work"
-              >
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-success opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-success"></span>
-                </span>
-                <span className="text-sm font-medium">{sections[language].openToWork}</span>
-                <Sparkles className="w-4 h-4" />
-              </motion.div>
-            )}
-
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -212,6 +195,25 @@ const Hero = () => {
                   </div>
                 )}
               </div>
+
+              {/* Open to Work Badge - Top of profile image */}
+              {profile.openToWork && profile.openToWorkMessage && (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.6 }}
+                  className="absolute -top-3 left-1/2 -translate-x-1/2 z-10"
+                >
+                  <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-success/20 backdrop-blur-sm border border-success/40 text-success shadow-lg shadow-success/20">
+                    <span className="relative flex h-2.5 w-2.5">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-success opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-success"></span>
+                    </span>
+                    <span className="text-sm font-semibold whitespace-nowrap">{t(profile.openToWorkMessage)}</span>
+                    <Sparkles className="w-4 h-4" />
+                  </div>
+                </motion.div>
+              )}
             </div>
           </motion.div>
         </div>

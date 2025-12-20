@@ -17,8 +17,12 @@
     "portfolio": "https://www.badrabba.com",
     "photoUrl": "/images/Profile.png",
     "resumeUrl": "/docs/Cv.pdf",
-    "openToWork": true
-  },
+    "openToWork": true,
+    "openToWorkMessage": {
+      "en": "Open to Internship opportunities",
+      "fr": "Ouvert aux opportunités de stage"
+    }
+          },
   "hero": {
     "typingText": {
       "en": [
