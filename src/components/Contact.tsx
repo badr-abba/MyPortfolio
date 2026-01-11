@@ -1,3 +1,4 @@
+import * as React from 'react';
 import { motion } from 'framer-motion';
 import { Send, Mail, Phone, MapPin, Linkedin, Github } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
@@ -9,6 +10,16 @@ import { Textarea } from '@/components/ui/textarea';
 const Contact = () => {
   const { language } = useLanguage();
   const { profile, sections } = portfolioData;
+  const [formData, setFormData] = React.useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
 
   return (
     <section id="contact" className="section-padding relative">
@@ -99,24 +110,18 @@ const Contact = () => {
           </motion.div>
 
           {/* Contact Form */}
-          <motion.form
+          <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
             className="glass rounded-2xl p-5 md:p-8 space-y-4 md:space-y-6"
-            onSubmit={(e) => {
-              e.preventDefault();
-              const formData = new FormData(e.currentTarget);
-              const name = formData.get('name');
-              const email = formData.get('email');
-              const message = formData.get('message');
-              window.location.href = `mailto:${profile.email}?subject=Portfolio Contact from ${name}&body=${message} (from ${email})`;
-            }}
           >
             <div>
               <Input
                 name="name"
+                value={formData.name}
+                onChange={handleChange}
                 required
                 placeholder={sections[language].yourName}
                 className="bg-background/50 border-primary/10 focus:border-primary/30 transition-all font-medium"
@@ -126,6 +131,8 @@ const Contact = () => {
               <Input
                 name="email"
                 type="email"
+                value={formData.email}
+                onChange={handleChange}
                 required
                 placeholder={sections[language].yourEmail}
                 className="bg-background/50 border-primary/10 focus:border-primary/30 transition-all font-medium"
@@ -134,17 +141,21 @@ const Contact = () => {
             <div>
               <Textarea
                 name="message"
+                value={formData.message}
+                onChange={handleChange}
                 required
                 placeholder={sections[language].yourMessage}
                 rows={5}
                 className="bg-background/50 resize-none border-primary/10 focus:border-primary/30 transition-all font-medium"
               />
             </div>
-            <Button variant="gradient" size="lg" type="submit" className="w-full gap-2 shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all duration-300">
-              <Send className="w-4 h-4" />
-              {sections[language].sendMessage}
+            <Button variant="gradient" size="lg" className="w-full gap-2 shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all duration-300" asChild>
+              <a href={`mailto:${profile.email}?subject=Portfolio Contact from ${formData.name}&body=${encodeURIComponent(formData.message)}%0D%0A%0D%0A(From: ${formData.email})`}>
+                <Send className="w-4 h-4" />
+                {sections[language].sendMessage}
+              </a>
             </Button>
-          </motion.form>
+          </motion.div>
         </div>
       </div>
     </section>
