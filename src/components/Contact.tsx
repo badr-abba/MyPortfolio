@@ -27,54 +27,42 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // If Formspree ID is set, use it
-    if (profile.formspreeId) {
-      try {
-        const response = await fetch(`https://formspree.io/f/${profile.formspreeId}`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-            name: formData.name,
-            email: formData.email,
-            subject: formData.subject,
-            message: formData.message
-          })
-        });
-
-        if (response.ok) {
-          toast({
-            title: sections[language].sendMessage || "Message Sent Successfully",
-            description: "Thanks! I will get back to you as soon as possible.",
-            variant: "success",
-          });
-          setFormData({ name: '', email: '', subject: '', message: '' });
-        } else {
-          throw new Error('Failed to send message');
-        }
-      } catch (error) {
-        toast({
-          title: "Error",
-          description: "Something went wrong. Please try again or email me directly.",
-          variant: "destructive",
-        });
-      }
-    } else {
-      // Fallback to mailto if no ID is configured
-      const subject = formData.subject || `Portfolio Contact from ${formData.name}`;
-      const body = `${formData.message}\n\n(From: ${formData.email})`;
-      const mailtoUrl = `mailto:${profile.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-      window.location.href = mailtoUrl;
-
-      toast({
-        title: "Email Client Opened",
-        description: "Please click 'Send' in your email application to finish sending the message.",
-        variant: "default",
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/badreddineabba@gmail.com", {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          _subject: `Portfolio Contact: ${formData.subject || 'New Message'}`, // Custom subject for FormSubmit
+          _template: 'table' // FormSubmit template option
+        })
       });
 
-      setFormData({ name: '', email: '', subject: '', message: '' });
+      const result = await response.json();
+
+      if (response.ok) {
+        toast({
+          title: sections[language].sendMessage || "Message Sent Successfully",
+          description: "Thanks! I will get back to you as soon as possible.",
+          variant: "success",
+        });
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } else {
+        throw new Error(result.message || 'Failed to send message');
+      }
+    } catch (error) {
+      console.error(error);
+      toast({
+        title: "Error",
+        description: "Something went wrong. Please try again or email me directly.",
+        variant: "destructive",
+      });
     }
   };
 
