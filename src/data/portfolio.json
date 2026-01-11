@@ -320,8 +320,8 @@
     },
     {
       "title": {
-        "en": "E-Learning Platform",
-        "fr": "Plateforme E-Learning"
+        "en": "BD2C Learning Platform",
+        "fr": "Plateforme d'apprentissage BD2C"
       },
       "category": {
         "en": "Web Dev / Education",
@@ -337,9 +337,9 @@
         "JavaScript",
         "Firebase"
       ],
-      "image": "/images/learn.png",
+      "image": "/images/bd2cLearning.png",
       "repoLink": "#",
-      "demoLink": "bd2c.badrabba.com"
+      "demoLink": "https://bd2c.badrabba.com"
     }
   ],
   "certifications": [
