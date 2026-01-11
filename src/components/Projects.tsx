@@ -49,18 +49,20 @@ const Projects = () => {
                 {/* Project Image */}
                 <div className="relative h-48 md:h-56 overflow-hidden bg-gradient-to-br from-primary/20 via-accent/20 to-warning/20">
                   {!imageErrors[index] && project.image ? (
-                    <img 
-                      src={project.image}
-                      alt={typeof project.title === 'string' ? project.title : t(project.title)}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                      onError={() => handleImageError(index)}
-                    />
+                    <div className="w-full h-full overflow-hidden">
+                      <img
+                        src={project.image}
+                        alt={typeof project.title === 'string' ? project.title : t(project.title)}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:rotate-1"
+                        onError={() => handleImageError(index)}
+                      />
+                    </div>
                   ) : (
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <FolderOpen className="w-20 h-20 text-foreground/10" />
+                    <div className="absolute inset-0 flex items-center justify-center bg-secondary/30">
+                      <FolderOpen className="w-20 h-20 text-muted-foreground/20 group-hover:text-primary/20 transition-colors duration-500" />
                     </div>
                   )}
-                  
+
                   {/* Overlay on hover */}
                   <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end justify-center pb-6 gap-3">
                     {project.repoLink !== '#' && (
@@ -95,9 +97,9 @@ const Projects = () => {
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag, tagIndex) => (
-                      <Badge 
-                        key={tagIndex} 
-                        variant="outline" 
+                      <Badge
+                        key={tagIndex}
+                        variant="outline"
                         className="text-xs border-border/50 bg-secondary/50"
                       >
                         {tag}

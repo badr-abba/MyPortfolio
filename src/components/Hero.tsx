@@ -17,8 +17,9 @@ const Hero = () => {
 
   useEffect(() => {
     const currentFullText = typingTexts[currentTextIndex];
-    const typeSpeed = isDeleting ? 30 : 80;
-    const pauseTime = isDeleting ? 500 : 2000;
+    // Slower typing for more "premium" feel
+    const typeSpeed = isDeleting ? 40 : 100;
+    const pauseTime = isDeleting ? 400 : 2500;
 
     if (!isDeleting && displayText === currentFullText) {
       setTimeout(() => setIsDeleting(true), pauseTime);
@@ -50,7 +51,7 @@ const Hero = () => {
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Animated Background */}
       <div className="absolute inset-0 bg-gradient-subtle" />
-      
+
       {/* Floating Particles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(6)].map((_, i) => (
@@ -176,15 +177,15 @@ const Hero = () => {
               {/* Decorative rings */}
               <div className="absolute inset-[-20px] rounded-full border-2 border-dashed border-primary/20 animate-rotate-slow" />
               <div className="absolute inset-[-40px] rounded-full border border-accent/10" />
-              
+
               {/* Glow effect */}
               <div className="absolute inset-0 bg-gradient-primary rounded-full blur-3xl opacity-30 animate-pulse-glow" />
-              
+
               {/* Profile image container */}
               <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden gradient-border">
                 {!imageError ? (
-                  <img 
-                    src={profile.photoUrl} 
+                  <img
+                    src={profile.photoUrl}
                     alt={profile.name}
                     className="w-full h-full object-cover"
                     onError={() => setImageError(true)}
@@ -230,7 +231,7 @@ const Hero = () => {
         >
           <span className="text-sm font-medium hidden md:block">{language === 'en' ? 'Scroll Down' : 'Défiler'}</span>
           <div className="w-6 h-10 rounded-full border-2 border-current flex justify-center pt-2">
-            <motion.div 
+            <motion.div
               className="w-1 h-2 bg-current rounded-full"
               animate={{ y: [0, 8, 0] }}
               transition={{ duration: 1.5, repeat: Infinity }}

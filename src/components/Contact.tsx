@@ -105,29 +105,42 @@ const Contact = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
             className="glass rounded-2xl p-5 md:p-8 space-y-4 md:space-y-6"
-            onSubmit={(e) => e.preventDefault()}
+            onSubmit={(e) => {
+              e.preventDefault();
+              const formData = new FormData(e.currentTarget);
+              const name = formData.get('name');
+              const email = formData.get('email');
+              const message = formData.get('message');
+              window.location.href = `mailto:${profile.email}?subject=Portfolio Contact from ${name}&body=${message} (from ${email})`;
+            }}
           >
             <div>
               <Input
+                name="name"
+                required
                 placeholder={sections[language].yourName}
-                className="bg-background/50"
+                className="bg-background/50 border-primary/10 focus:border-primary/30 transition-all font-medium"
               />
             </div>
             <div>
               <Input
+                name="email"
                 type="email"
+                required
                 placeholder={sections[language].yourEmail}
-                className="bg-background/50"
+                className="bg-background/50 border-primary/10 focus:border-primary/30 transition-all font-medium"
               />
             </div>
             <div>
               <Textarea
+                name="message"
+                required
                 placeholder={sections[language].yourMessage}
                 rows={5}
-                className="bg-background/50 resize-none"
+                className="bg-background/50 resize-none border-primary/10 focus:border-primary/30 transition-all font-medium"
               />
             </div>
-            <Button variant="gradient" size="lg" className="w-full gap-2">
+            <Button variant="gradient" size="lg" type="submit" className="w-full gap-2 shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all duration-300">
               <Send className="w-4 h-4" />
               {sections[language].sendMessage}
             </Button>
