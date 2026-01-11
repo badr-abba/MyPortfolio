@@ -138,9 +138,11 @@ const Hero = () => {
               transition={{ delay: 0.6 }}
               className="flex flex-wrap gap-3 md:gap-4 justify-center lg:justify-start"
             >
-              <Button variant="gradient" size="lg" className="gap-2 shadow-lg shadow-primary/25">
-                <Download className="w-4 h-4" />
-                {t(sections[language].downloadCV)}
+              <Button variant="gradient" size="lg" className="gap-2 shadow-lg shadow-primary/25" asChild>
+                <a href={profile.resumeUrl} target="_blank" rel="noopener noreferrer" download>
+                  <Download className="w-4 h-4" />
+                  {t(sections[language].downloadCV)}
+                </a>
               </Button>
 
               <div className="flex gap-2 md:gap-3">
