@@ -17,31 +17,32 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222 47% 11%;
 
-    /* Slightly darker/richer blue for light mode readability */
-    --primary: 221 83% 53%;
+    /* Darker, richer blue for primary text/elements */
+    --primary: 221 83% 45%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
 
+    /* Darker muted text for readability */
     --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted-foreground: 215 25% 40%;
 
     /* Vibrant purple for accent */
     --accent: 262 83% 58%;
     --accent-foreground: 210 40% 98%;
 
-    --success: 142 71% 45%;
-    --success-foreground: 0 0% 100%;
+    --success: 142 76% 36%;
+    --success-foreground: 356 100% 100%;
 
-    --warning: 32 95% 55%;
+    --warning: 32 95% 45%;
     --warning-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
+    --border: 214.3 31.8% 85%;
+    --input: 214.3 31.8% 85%;
     --ring: 221 83% 53%;
 
     --radius: 0.75rem;
