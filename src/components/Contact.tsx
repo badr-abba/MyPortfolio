@@ -15,6 +15,7 @@ const Contact = () => {
   const [formData, setFormData] = React.useState({
     name: '',
     email: '',
+    subject: '',
     message: ''
   });
 
@@ -25,20 +26,22 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const subject = `Portfolio Contact from ${formData.name}`;
+    const subject = formData.subject || `Portfolio Contact from ${formData.name}`;
     const body = `${formData.message}\n\n(From: ${formData.email})`;
     const mailtoUrl = `mailto:${profile.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
     window.location.href = mailtoUrl;
 
     toast({
-      title: sections[language].sendMessage || "Message Sent",
-      description: "Your default email client has been opened with your message.",
+      title: sections[language].sendMessage || "Message Sent Successfully",
+      description: "Your default email client has been opened with your message. Please click send in your mail app.",
+      variant: "success",
     });
 
     setFormData({
       name: '',
       email: '',
+      subject: '',
       message: ''
     });
   };
@@ -141,40 +144,54 @@ const Contact = () => {
           >
             <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
               <div>
+                <label className="text-sm font-medium mb-1.5 block text-muted-foreground">Name</label>
                 <Input
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  placeholder={sections[language].yourName}
+                  placeholder="Your name"
                   className="bg-background/50 border-primary/10 focus:border-primary/30 transition-all font-medium"
                 />
               </div>
               <div>
+                <label className="text-sm font-medium mb-1.5 block text-muted-foreground">Email</label>
                 <Input
                   name="email"
                   type="email"
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  placeholder={sections[language].yourEmail}
+                  placeholder="your@email.com"
                   className="bg-background/50 border-primary/10 focus:border-primary/30 transition-all font-medium"
                 />
               </div>
               <div>
+                <label className="text-sm font-medium mb-1.5 block text-muted-foreground">Subject</label>
+                <Input
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  required
+                  placeholder="What's this about?"
+                  className="bg-background/50 border-primary/10 focus:border-primary/30 transition-all font-medium"
+                />
+              </div>
+              <div>
+                <label className="text-sm font-medium mb-1.5 block text-muted-foreground">Message</label>
                 <Textarea
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  placeholder={sections[language].yourMessage}
+                  placeholder="Tell me about your project or opportunity..."
                   rows={5}
                   className="bg-background/50 resize-none border-primary/10 focus:border-primary/30 transition-all font-medium"
                 />
               </div>
               <Button variant="gradient" size="lg" type="submit" className="w-full gap-2 shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all duration-300">
                 <Send className="w-4 h-4" />
-                {sections[language].sendMessage}
+                Send Message
               </Button>
             </form>
           </motion.div>
