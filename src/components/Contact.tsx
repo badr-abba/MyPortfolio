@@ -24,26 +24,58 @@ const Contact = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const subject = formData.subject || `Portfolio Contact from ${formData.name}`;
-    const body = `${formData.message}\n\n(From: ${formData.email})`;
-    const mailtoUrl = `mailto:${profile.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
-    window.location.href = mailtoUrl;
+    // If Formspree ID is set, use it
+    if (profile.formspreeId) {
+      try {
+        const response = await fetch(`https://formspree.io/f/${profile.formspreeId}`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            subject: formData.subject,
+            message: formData.message
+          })
+        });
 
-    toast({
-      title: sections[language].sendMessage || "Message Sent Successfully",
-      description: "Your default email client has been opened with your message. Please click send in your mail app.",
-      variant: "success",
-    });
+        if (response.ok) {
+          toast({
+            title: sections[language].sendMessage || "Message Sent Successfully",
+            description: "Thanks! I will get back to you as soon as possible.",
+            variant: "success",
+          });
+          setFormData({ name: '', email: '', subject: '', message: '' });
+        } else {
+          throw new Error('Failed to send message');
+        }
+      } catch (error) {
+        toast({
+          title: "Error",
+          description: "Something went wrong. Please try again or email me directly.",
+          variant: "destructive",
+        });
+      }
+    } else {
+      // Fallback to mailto if no ID is configured
+      const subject = formData.subject || `Portfolio Contact from ${formData.name}`;
+      const body = `${formData.message}\n\n(From: ${formData.email})`;
+      const mailtoUrl = `mailto:${profile.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
-    setFormData({
-      name: '',
-      email: '',
-      subject: '',
-      message: ''
-    });
+      window.location.href = mailtoUrl;
+
+      toast({
+        title: "Email Client Opened",
+        description: "Please click 'Send' in your email application to finish sending the message.",
+        variant: "default",
+      });
+
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    }
   };
 
   return (

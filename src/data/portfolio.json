@@ -15,8 +15,9 @@
     "linkedin": "https://www.linkedin.com/in/badreddineabba/",
     "github": "https://github.com/badr-abba/",
     "portfolio": "https://www.badrabba.com",
+    "formspreeId": "",
     "photoUrl": "/images/Profile.png",
-    "resumeUrl": "/docs/ABBB.Badreddine.CV.pdf",
+    "resumeUrl": "/docs/ABBA.Badreddine.CV.pdf",
     "openToWork": true,
     "openToWorkMessage": {
       "en": "Open to Stage PFA",
