@@ -207,12 +207,12 @@ const Hero = () => {
                   transition={{ delay: 0.6 }}
                   className="absolute -top-3 left-1/2 -translate-x-1/2 z-10"
                 >
-                  <div className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-green-600 dark:bg-green-500/20 backdrop-blur-md border border-green-700/30 dark:border-green-400/30 text-white dark:text-green-300 shadow-xl shadow-green-600/20 font-bold tracking-wide">
-                    <span className="relative flex h-3 w-3">
+                  <div className="flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-green-600 dark:bg-green-500/20 backdrop-blur-md border border-green-700/30 dark:border-green-400/30 text-white dark:text-green-300 shadow-xl shadow-green-600/20 font-bold tracking-wide w-max max-w-[280px] md:max-w-none">
+                    <span className="relative flex h-3 w-3 flex-shrink-0">
                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white dark:bg-green-400 opacity-75"></span>
                       <span className="relative inline-flex rounded-full h-3 w-3 bg-white dark:bg-green-400"></span>
                     </span>
-                    <span className="text-sm whitespace-nowrap uppercase tracking-wider">{t(profile.openToWorkMessage)}</span>
+                    <span className="text-xs md:text-sm text-center uppercase tracking-wider leading-tight">{t(profile.openToWorkMessage)}</span>
                   </div>
                 </motion.div>
               )}
