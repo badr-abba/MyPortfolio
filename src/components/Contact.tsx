@@ -6,10 +6,12 @@ import portfolioData from '@/data/portfolio.json';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import { useToast } from "@/components/ui/use-toast";
 
 const Contact = () => {
   const { language } = useLanguage();
   const { profile, sections } = portfolioData;
+  const { toast } = useToast();
   const [formData, setFormData] = React.useState({
     name: '',
     email: '',
@@ -19,6 +21,26 @@ const Contact = () => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const subject = `Portfolio Contact from ${formData.name}`;
+    const body = `${formData.message}\n\n(From: ${formData.email})`;
+    const mailtoUrl = `mailto:${profile.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    window.location.href = mailtoUrl;
+
+    toast({
+      title: sections[language].sendMessage || "Message Sent",
+      description: "Your default email client has been opened with your message.",
+    });
+
+    setFormData({
+      name: '',
+      email: '',
+      message: ''
+    });
   };
 
   return (
@@ -117,44 +139,44 @@ const Contact = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="glass rounded-2xl p-5 md:p-8 space-y-4 md:space-y-6"
           >
-            <div>
-              <Input
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-                placeholder={sections[language].yourName}
-                className="bg-background/50 border-primary/10 focus:border-primary/30 transition-all font-medium"
-              />
-            </div>
-            <div>
-              <Input
-                name="email"
-                type="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                placeholder={sections[language].yourEmail}
-                className="bg-background/50 border-primary/10 focus:border-primary/30 transition-all font-medium"
-              />
-            </div>
-            <div>
-              <Textarea
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                required
-                placeholder={sections[language].yourMessage}
-                rows={5}
-                className="bg-background/50 resize-none border-primary/10 focus:border-primary/30 transition-all font-medium"
-              />
-            </div>
-            <Button variant="gradient" size="lg" className="w-full gap-2 shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all duration-300" asChild>
-              <a href={`mailto:${profile.email}?subject=Portfolio Contact from ${formData.name}&body=${encodeURIComponent(formData.message)}%0D%0A%0D%0A(From: ${formData.email})`}>
+            <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
+              <div>
+                <Input
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  placeholder={sections[language].yourName}
+                  className="bg-background/50 border-primary/10 focus:border-primary/30 transition-all font-medium"
+                />
+              </div>
+              <div>
+                <Input
+                  name="email"
+                  type="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  placeholder={sections[language].yourEmail}
+                  className="bg-background/50 border-primary/10 focus:border-primary/30 transition-all font-medium"
+                />
+              </div>
+              <div>
+                <Textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  placeholder={sections[language].yourMessage}
+                  rows={5}
+                  className="bg-background/50 resize-none border-primary/10 focus:border-primary/30 transition-all font-medium"
+                />
+              </div>
+              <Button variant="gradient" size="lg" type="submit" className="w-full gap-2 shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all duration-300">
                 <Send className="w-4 h-4" />
                 {sections[language].sendMessage}
-              </a>
-            </Button>
+              </Button>
+            </form>
           </motion.div>
         </div>
       </div>
