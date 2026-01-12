@@ -93,7 +93,7 @@ const Hero = () => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
-            className="flex-shrink-0 relative z-10"
+            className="flex-shrink-0 relative z-10 mb-12 lg:mb-0"
           >
             <div className="relative">
               {/* Decorative rings */}
@@ -205,7 +205,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
-              className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
+              className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto pb-16 lg:pb-0"
             >
               <Button variant="default" size="lg" className="rounded-full px-8 bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-500/25" asChild>
                 <a href="#projects" onClick={(e) => { e.preventDefault(); document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' }); }}>
@@ -240,15 +240,15 @@ const Hero = () => {
           </motion.div>
         </div>
 
-        {/* Scroll Indicator */}
+        {/* Scroll Indicator - Hidden on small screens to prevent overlap, visible on larger */}
         <motion.button
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1, duration: 0.5 }}
           onClick={scrollToAbout}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted-foreground hover:text-foreground transition-colors group"
+          className="absolute bottom-4 left-1/2 -translate-x-1/2 flex-col items-center gap-2 text-muted-foreground hover:text-foreground transition-colors group hidden md:flex"
         >
-          <span className="text-sm font-medium hidden md:block">{language === 'en' ? 'Scroll Down' : 'Défiler'}</span>
+          <span className="text-sm font-medium">{language === 'en' ? 'Scroll Down' : 'Défiler'}</span>
           <div className="w-6 h-10 rounded-full border-2 border-current flex justify-center pt-2">
             <motion.div
               className="w-1 h-2 bg-current rounded-full"
