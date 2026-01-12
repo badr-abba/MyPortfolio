@@ -38,9 +38,8 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled ? 'glass py-3 shadow-lg shadow-primary/5' : 'bg-transparent py-5'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled || isMobileMenuOpen ? 'glass py-3 shadow-lg shadow-primary/5' : 'bg-transparent py-5'
+        }`}
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <motion.a
@@ -61,11 +60,10 @@ const Navbar = () => {
             <button
               key={key}
               onClick={() => scrollToSection(key)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 relative ${
-                isActive(key)
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 relative ${isActive(key)
                   ? 'text-primary'
                   : 'text-muted-foreground hover:text-foreground'
-              }`}
+                }`}
             >
               {label}
               {isActive(key) && (
@@ -124,9 +122,11 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <motion.button
+            type="button"
             whileTap={{ scale: 0.95 }}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden p-2.5 rounded-full glass border border-border/50"
+            className="lg:hidden p-2.5 rounded-full glass border border-border/50 z-50"
+            aria-label="Toggle menu"
           >
             <AnimatePresence mode="wait">
               {isMobileMenuOpen ? (
@@ -160,18 +160,17 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden glass mt-2 mx-4 rounded-2xl overflow-hidden border border-border/50"
+            className="lg:hidden glass mt-2 mx-4 rounded-2xl overflow-hidden border border-border/50 shadow-2xl overflow-y-auto max-h-[80vh] bg-card/95 backdrop-blur-3xl"
           >
             <div className="p-4 flex flex-col gap-1">
               {Object.entries(navItems).map(([key, label]) => (
                 <button
                   key={key}
                   onClick={() => scrollToSection(key)}
-                  className={`text-left py-3 px-4 rounded-xl transition-all duration-300 font-medium ${
-                    isActive(key)
+                  className={`text-left py-3 px-4 rounded-xl transition-all duration-300 font-medium ${isActive(key)
                       ? 'bg-primary/10 text-primary border border-primary/30'
-                      : 'hover:bg-secondary'
-                  }`}
+                      : 'hover:bg-accent/10 hover:pl-6'
+                    }`}
                 >
                   {label}
                 </button>
