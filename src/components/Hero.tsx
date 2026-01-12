@@ -88,90 +88,12 @@ const Hero = () => {
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20">
-          {/* Text Content */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="flex-1 text-center lg:text-left"
-          >
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="text-primary font-semibold mb-3 md:mb-4 text-lg"
-            >
-              {language === 'en' ? "Hello, I'm" : 'Bonjour, je suis'}
-            </motion.p>
-
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-bold mb-4 md:mb-6"
-            >
-              <span className="text-gradient animate-gradient">{profile.name}</span>
-            </motion.h1>
-
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
-              className="text-lg md:text-xl lg:text-2xl text-muted-foreground mb-4 md:mb-6"
-            >
-              {t(profile.role)}
-            </motion.h2>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 }}
-              className="h-16 md:h-20 flex items-center justify-center lg:justify-start mb-6 md:mb-8"
-            >
-              <p className="text-base md:text-lg lg:text-xl font-medium">
-                <span className="typing-cursor">{displayText}</span>
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6 }}
-              className="flex flex-wrap gap-3 md:gap-4 justify-center lg:justify-start"
-            >
-              <Button variant="gradient" size="lg" className="gap-2 shadow-lg shadow-primary/25" asChild>
-                <a href={profile.resumeUrl} target="_blank" rel="noopener noreferrer" download>
-                  <Download className="w-4 h-4" />
-                  {t(sections[language].downloadCV)}
-                </a>
-              </Button>
-
-              <div className="flex gap-2 md:gap-3">
-                <Button variant="glass" size="icon" className="hover:bg-primary/10 hover:border-primary/50 transition-all duration-300" asChild>
-                  <a href={profile.linkedin} target="_blank" rel="noopener noreferrer">
-                    <Linkedin className="w-5 h-5" />
-                  </a>
-                </Button>
-                <Button variant="glass" size="icon" className="hover:bg-primary/10 hover:border-primary/50 transition-all duration-300" asChild>
-                  <a href={profile.github} target="_blank" rel="noopener noreferrer">
-                    <Github className="w-5 h-5" />
-                  </a>
-                </Button>
-                <Button variant="glass" size="icon" className="hover:bg-primary/10 hover:border-primary/50 transition-all duration-300" asChild>
-                  <a href={`mailto:${profile.email}`}>
-                    <Mail className="w-5 h-5" />
-                  </a>
-                </Button>
-              </div>
-            </motion.div>
-          </motion.div>
-
           {/* Profile Image */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="flex-shrink-0"
+            transition={{ duration: 0.8 }}
+            className="flex-shrink-0 relative z-10"
           >
             <div className="relative">
               {/* Decorative rings */}
@@ -182,7 +104,7 @@ const Hero = () => {
               <div className="absolute inset-0 bg-gradient-primary rounded-full blur-3xl opacity-30 animate-pulse-glow" />
 
               {/* Profile image container */}
-              <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden gradient-border">
+              <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden gradient-border box-shadow-2xl">
                 {!imageError ? (
                   <img
                     src={profile.photoUrl}
@@ -199,24 +121,122 @@ const Hero = () => {
                 )}
               </div>
 
-              {/* Open to Work Badge - Top of profile image */}
+              {/* Open to Work Badge - Bottom of profile image like in example */}
               {profile.openToWork && profile.openToWorkMessage && (
                 <motion.div
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.6 }}
-                  className="absolute -top-3 left-1/2 -translate-x-1/2 z-10"
+                  className="absolute -bottom-6 left-1/2 -translate-x-1/2 z-20"
                 >
-                  <div className="flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-green-600 dark:bg-green-500/20 backdrop-blur-md border border-green-700/30 dark:border-green-400/30 text-white dark:text-green-300 shadow-xl shadow-green-600/20 font-bold tracking-wide w-max max-w-[280px] md:max-w-none">
+                  <div className="flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-background/80 backdrop-blur-md border border-border shadow-xl font-medium w-max">
                     <span className="relative flex h-3 w-3 flex-shrink-0">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white dark:bg-green-400 opacity-75"></span>
-                      <span className="relative inline-flex rounded-full h-3 w-3 bg-white dark:bg-green-400"></span>
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
                     </span>
-                    <span className="text-xs md:text-sm text-center uppercase tracking-wider leading-tight">{t(profile.openToWorkMessage)}</span>
+                    <span className="text-xs md:text-sm whitespace-nowrap">{t(profile.openToWorkMessage)}</span>
                   </div>
                 </motion.div>
               )}
             </div>
+          </motion.div>
+
+          {/* Text Content */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="flex-1 text-center lg:text-left flex flex-col items-center lg:items-start"
+          >
+            {/* Location Badge */}
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              className="mb-6 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-secondary/50 border border-border/50 backdrop-blur-sm text-sm text-muted-foreground"
+            >
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+              </span>
+              {profile.location}
+            </motion.div>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="text-primary font-semibold mb-3 md:mb-4 text-lg"
+            >
+              {language === 'en' ? "Hi, I'm" : 'Salut, je suis'}
+            </motion.p>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+              className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-bold mb-4 md:mb-6 leading-tight"
+            >
+              <span className="text-gradient animate-gradient">{profile.name.split(' ')[1]}</span>
+            </motion.h1>
+
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+              className="text-xl md:text-2xl lg:text-3xl font-medium text-foreground mb-4 md:mb-6"
+            >
+              {t(profile.role)}
+            </motion.h2>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5 }}
+              className="h-12 md:h-16 flex items-center justify-center lg:justify-start mb-6 md:mb-8 text-muted-foreground max-w-lg"
+            >
+              <p className="text-base md:text-lg">
+                {/* Using typing text as description/specialization logic like in example if needed, or keeping existing typing effect */}
+                <span className="typing-cursor">{displayText}</span>
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
+              className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
+            >
+              <Button variant="default" size="lg" className="rounded-full px-8 bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-500/25" asChild>
+                <a href="#projects" onClick={(e) => { e.preventDefault(); document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' }); }}>
+                  {sections[language].viewProject} <ArrowDown className="ml-2 w-4 h-4" />
+                </a>
+              </Button>
+
+              <Button variant="outline" size="lg" className="rounded-full px-8 border-border bg-background/50 hover:bg-background/80 backdrop-blur-sm" asChild>
+                <a href={profile.resumeUrl} target="_blank" rel="noopener noreferrer" download>
+                  <Download className="mr-2 w-4 h-4" />
+                  {t(sections[language].downloadCV)}
+                </a>
+              </Button>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.8 }}
+              className="mt-8 flex gap-4 text-muted-foreground"
+            >
+              <a href={profile.github} target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors p-2 bg-secondary/50 rounded-full">
+                <Github className="w-5 h-5" />
+              </a>
+              <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors p-2 bg-secondary/50 rounded-full">
+                <Linkedin className="w-5 h-5" />
+              </a>
+              <a href={`mailto:${profile.email}`} className="hover:text-foreground transition-colors p-2 bg-secondary/50 rounded-full">
+                <Mail className="w-5 h-5" />
+              </a>
+            </motion.div>
           </motion.div>
         </div>
 
