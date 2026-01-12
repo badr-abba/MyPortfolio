@@ -1,0 +1,437 @@
+{
+  "profile": {
+    "name": "ABBA BADREDDINE",
+    "role": {
+      "en": "Master's Student in Big Data & Cloud Computing",
+      "fr": "Étudiant en Master Big Data & Cloud Computing"
+    },
+    "bio": {
+      "en": "Passionate professional in advanced digital technologies, specialized in Big Data, Cloud Computing, DevOps and Data Science, rigorous and solution-oriented to develop modern, scalable and optimized architectures.",
+      "fr": "Professionnel passionné par les technologies numériques avancées, spécialisé en Big Data, Cloud Computing, DevOps et Data Science, rigoureux et orienté solutions pour développer des architectures modernes, scalables et optimisées."
+    },
+    "location": "Bouskoura, Maroc",
+    "email": "badreddineabba@gmail.com",
+    "phone": "+212601582388",
+    "linkedin": "https://www.linkedin.com/in/badreddineabba/",
+    "github": "https://github.com/badr-abba/",
+    "portfolio": "https://www.badrabba.com",
+    "formspreeId": "",
+    "photoUrl": "/images/Profile.png",
+    "resumeUrl": "/docs/ABBA.Badreddine.CV.pdf",
+    "openToWork": true,
+    "openToWorkMessage": {
+      "en": "Open to Internship",
+      "fr": "Ouvert au Stage"
+    }
+  },
+  "hero": {
+    "typingText": {
+      "en": [
+        "Master's student in Big Data & Cloud Computing.",
+        "Passionate about Data Science.",
+        "Interested in DevOps practices.",
+        "Eager to learn about scalable cloud architectures.",
+        "Exploring automation and data analysis."
+      ],
+      "fr": [
+        "Étudiant en Master Big Data & Cloud Computing.",
+        "Passionné par la Data Science.",
+        "Intéressé par les pratiques DevOps.",
+        "Curieux des architectures cloud scalables.",
+        "Exploration de l'automatisation et analyse de données."
+      ]
+    }
+  },
+  "skills": {
+    "programming": [
+      "JavaScript",
+      "Python",
+      "PHP",
+      "SQL",
+      "Shell/Bash",
+      "HTML/CSS"
+    ],
+    "databases": [
+      "MySQL",
+      "SQL Server",
+      "PostgreSQL",
+      "MongoDB",
+      "Firebase"
+    ],
+    "bigdata": [
+      "Power BI",
+      "Apache Spark",
+      "Hadoop MapReduce",
+      "Pandas",
+      "NumPy",
+      "ETL",
+      "Data Modeling"
+    ],
+    "devops": [
+      "Docker",
+      "Kubernetes",
+      "CI/CD",
+      "Jenkins",
+      "GitLab CI",
+      "Terraform",
+      "Linux"
+    ],
+    "cloud": [
+      "Azure",
+      "AWS basics",
+      "Cloud Architecture"
+    ],
+    "soft": {
+      "en": [
+        "Problem Solving",
+        "Analytical Thinking",
+        "Project Management",
+        "Team Collaboration",
+        "Autonomy",
+        "Adaptability",
+        "Technical Communication"
+      ],
+      "fr": [
+        "Résolution de problèmes",
+        "Esprit d'analyse",
+        "Gestion de projet",
+        "Travail d'équipe",
+        "Autonomie",
+        "Adaptabilité",
+        "Communication technique"
+      ]
+    }
+  },
+  "experience": [
+    {
+      "role": {
+        "en": "Intern | Data Analyst",
+        "fr": "Stagiaire | Data Analyst"
+      },
+      "company": "PHARMA5 (Nouaceur)",
+      "date": {
+        "en": "July 2025 - September 2025",
+        "fr": "Juillet 2025 - Septembre 2025"
+      },
+      "description": {
+        "en": "Creation and automation of dashboards for monitoring industrial performance and machine rates (Smart Factory).",
+        "fr": "Création et automatisation de tableaux de bord pour le suivi de la performance industrielle et des cadences machines (Smart Factory)."
+      },
+      "tasks": {
+        "en": [
+          "Smart Factory performance dashboards.",
+          "Equipment cleaning process monitoring.",
+          "Operational report automation.",
+          "Data modeling (KPIs)."
+        ],
+        "fr": [
+          "Tableaux de bord performance Smart Factory.",
+          "Suivi processus nettoyage équipements.",
+          "Automatisation de rapports opérationnels.",
+          "Modélisation de données (KPIs)."
+        ]
+      }
+    },
+    {
+      "role": {
+        "en": "Intern | BI & Performance",
+        "fr": "Stagiaire | BI & Performance"
+      },
+      "company": "LATECOERE (Casablanca)",
+      "date": {
+        "en": "October 2024 - April 2025",
+        "fr": "Octobre 2024 - Avril 2025"
+      },
+      "description": {
+        "en": "Digitalization and analysis of industrial performance. SAP and HOROQUARTZ data integration.",
+        "fr": "Digitalisation et analyse de la performance industrielle. Intégration de données SAP et HOROQUARTZ."
+      },
+      "tasks": {
+        "en": [
+          "Real-time production flow tracking (WIP).",
+          "Stock shortage anticipation dashboard.",
+          "ETL and data centralization.",
+          "Manual process optimization."
+        ],
+        "fr": [
+          "Suivi temps réel du flux de production (WIP).",
+          "Dashboard anticipation ruptures de stock.",
+          "ETL et centralisation des données.",
+          "Optimisation des processus manuels."
+        ]
+      }
+    }
+  ],
+  "education": [
+    {
+      "degree": {
+        "en": "Master Big Data & Cloud Computing",
+        "fr": "Master Big Data & Cloud Computing"
+      },
+      "school": "Faculté des Sciences Ain Chock",
+      "year": "2025 - 2027",
+      "description": {
+        "en": "Cloud Architecture, Big Data, AI.",
+        "fr": "Architecture Cloud, Big Data, IA."
+      }
+    },
+    {
+      "degree": {
+        "en": "Bachelor SMI (Networks & Systems)",
+        "fr": "Licence SMI (Réseaux & Systèmes)"
+      },
+      "school": "Faculté des Sciences Ain Chock",
+      "year": "2023 - 2024",
+      "description": {
+        "en": "System Administration, Networks, Dev.",
+        "fr": "Administration système, Réseaux, Dév."
+      }
+    },
+    {
+      "degree": {
+        "en": "DEUG Sciences",
+        "fr": "DEUG Sciences"
+      },
+      "school": "Faculté des Sciences Ain Chock",
+      "year": "2020 - 2023",
+      "description": {
+        "en": "Mathematics and Computer Science.",
+        "fr": "Mathématiques et Informatique."
+      }
+    },
+    {
+      "degree": {
+        "en": "Baccalaureate Sc. Math A",
+        "fr": "Baccalauréat Sc. Math A"
+      },
+      "school": "Lycée Ouled Hriz",
+      "year": "2018 - 2019",
+      "description": {
+        "en": "Mathematical Sciences.",
+        "fr": "Sciences Mathématiques."
+      }
+    }
+  ],
+  "projects": [
+    {
+      "title": "Smart Parking IoT",
+      "category": {
+        "en": "IoT / Embedded",
+        "fr": "IoT / Embarqué"
+      },
+      "description": {
+        "en": "Intelligent parking management system with Raspberry Pi, sensors, RFID and web supervision interface.",
+        "fr": "Système de gestion de parking intelligent avec Raspberry Pi, capteurs, RFID et interface web de supervision."
+      },
+      "tags": ["Python", "PHP", "Raspberry Pi", "IoT"],
+      "image": "/images/RPI1.png",
+      "repoLink": "#",
+      "demoLink": "#"
+    },
+    {
+      "title": "Digitalisation WIP Usine",
+      "category": {
+        "en": "Business Intelligence",
+        "fr": "Business Intelligence"
+      },
+      "description": {
+        "en": "Power BI visual interface displaying SAP production data on a real-time factory layout.",
+        "fr": "Interface visuelle Power BI affichant les données de production SAP sur un layout d'usine en temps réel."
+      },
+      "tags": ["PowerBI", "SAP", "DAX", "Data Viz"],
+      "image": "/images/WIP1.png",
+      "repoLink": "#",
+      "demoLink": "#"
+    },
+    {
+      "title": "Dashboard Performance & KPIs",
+      "category": {
+        "en": "Business Intelligence",
+        "fr": "Business Intelligence"
+      },
+      "description": {
+        "en": "Dashboards combining SAP and HOROQUARTZ for production ratio and performance tracking.",
+        "fr": "Tableaux de bord combinant SAP et HOROQUARTZ pour le suivi du ratio de production et de la performance."
+      },
+      "tags": ["PowerBI", "SAP", "Excel", "ETL"],
+      "image": "/images/PERFO.png",
+      "repoLink": "#",
+      "demoLink": "#"
+    },
+    {
+      "title": {
+        "en": "Stock Shortage Tracking",
+        "fr": "Suivi Ruptures de Stock"
+      },
+      "category": {
+        "en": "Supply Chain Data",
+        "fr": "Supply Chain Data"
+      },
+      "description": {
+        "en": "Article shortage anticipation tool to optimize the supply chain.",
+        "fr": "Outil d'anticipation des ruptures d'articles pour optimiser la chaîne d'approvisionnement."
+      },
+      "tags": ["PowerBI", "Analytics", "SQL"],
+      "image": "/images/ASP.png",
+      "repoLink": "#",
+      "demoLink": "#"
+    },
+    {
+      "title": {
+        "en": "Smart Factory: Machine Rate Tracking",
+        "fr": "Smart Factory : Suivi Cadences Machines"
+      },
+      "category": {
+        "en": "Business Intelligence / Industry 4.0",
+        "fr": "Business Intelligence / Industrie 4.0"
+      },
+      "description": {
+        "en": "Development of interactive Power BI dashboards for Smart Factory management. Centralization of production data via SQL Server to analyze critical KPIs (OEE, availability, quality), reduce downtime and optimize industrial productivity.",
+        "fr": "Développement de tableaux de bord interactifs Power BI pour le pilotage de la Smart Factory. Centralisation des données de production via SQL Server pour analyser les KPIs critiques (TRS, disponibilité, qualité), réduire les temps d'arrêt et optimiser la productivité industrielle."
+      },
+      "tags": ["PowerBI", "SQL Server", "Industrie 4.0", "Data Analysis"],
+      "image": "/images/CAD.png",
+      "repoLink": "#",
+      "demoLink": "#"
+    },
+    {
+      "title": {
+        "en": "BD2C Learning Platform",
+        "fr": "Plateforme d'apprentissage BD2C"
+      },
+      "category": {
+        "en": "Web Dev / Education",
+        "fr": "Web Dev / Éducation"
+      },
+      "description": {
+        "en": "Design and deployment of a web platform centralizing educational resources for the Big Data & Cloud Computing Master. The goal was to facilitate access to courses, tutorials and exams (Python, AI, Semantic Web) via an intuitive interface accessible to all students.",
+        "fr": "Conception et déploiement d'une plateforme web centralisant les ressources pédagogiques du Master Big Data & Cloud Computing. L'objectif était de faciliter l'accès aux cours, travaux dirigés et examens (Python, IA, Web Sémantique) via une interface intuitive et accessible à tous les étudiants."
+      },
+      "tags": ["HTML5", "CSS3", "JavaScript", "Firebase"],
+      "image": "/images/bd2cLearning.png",
+      "repoLink": "#",
+      "demoLink": "https://bd2c.badrabba.com"
+    }
+  ],
+  "certifications": [
+    {
+      "name": "Git and GitHub",
+      "issuer": "365 Data Science",
+      "date": "Nov 2025",
+      "link": "https://learn.365datascience.com/certificates/CC-D8699E634C/",
+      "icon": "github"
+    },
+    {
+      "name": "Intro to Data Science",
+      "issuer": "365 Data Science",
+      "date": "Nov 2025",
+      "link": "https://learn.365datascience.com/certificates/CC-A94952EA38/",
+      "icon": "database"
+    },
+    {
+      "name": "Introduction to Python",
+      "issuer": "DataCamp",
+      "date": "Nov 2025",
+      "link": "https://www.datacamp.com/completed/statement-of-accomplishment/course/f80eeecf659a68db9466e2f621b4290af98e6edc",
+      "icon": "code"
+    },
+    {
+      "name": "Cybersecurity & Ethical Hacking",
+      "issuer": "Cisco",
+      "date": {
+        "en": "June 2024",
+        "fr": "Juin 2024"
+      },
+      "link": "https://www.credly.com/badges/994039b2-21bd-402c-90ee-908a70f380e6/linked_in_profile",
+      "icon": "shield"
+    },
+    {
+      "name": "Network Defense",
+      "issuer": "Cisco",
+      "date": {
+        "en": "June 2024",
+        "fr": "Juin 2024"
+      },
+      "link": "https://www.credly.com/badges/d9d75e36-7c77-44ea-903a-19c82df58f84/linked_in_profile",
+      "icon": "shield-check"
+    },
+    {
+      "name": "Operating Systems Basics",
+      "issuer": "Cisco",
+      "date": {
+        "en": "June 2024",
+        "fr": "Juin 2024"
+      },
+      "link": "https://www.credly.com/badges/d3042b0f-731e-4eba-9040-e48f35df79ae/linked_in_profile",
+      "icon": "server"
+    }
+  ],
+  "nav": {
+    "en": {
+      "about": "About",
+      "skills": "Skills",
+      "experience": "Experience",
+      "education": "Education",
+      "projects": "Projects",
+      "certifications": "Certifications",
+      "contact": "Contact"
+    },
+    "fr": {
+      "about": "À propos",
+      "skills": "Compétences",
+      "experience": "Expérience",
+      "education": "Formation",
+      "projects": "Projets",
+      "certifications": "Certifications",
+      "contact": "Contact"
+    }
+  },
+  "sections": {
+    "en": {
+      "aboutTitle": "About Me",
+      "skillsTitle": "Skills & Expertise",
+      "programming": "Programming",
+      "databases": "Databases",
+      "bigdata": "Big Data & Analytics",
+      "devops": "DevOps & CI/CD",
+      "cloud": "Cloud Computing",
+      "softSkills": "Soft Skills",
+      "experienceTitle": "Professional Experience",
+      "educationTitle": "Education",
+      "projectsTitle": "Featured Projects",
+      "certificationsTitle": "Certifications",
+      "contactTitle": "Get In Touch",
+      "downloadCV": "Download CV",
+      "viewProject": "View Project",
+      "viewCode": "View Code",
+      "sendMessage": "Send Message",
+      "yourName": "Your Name",
+      "yourEmail": "Your Email",
+      "yourMessage": "Your Message",
+      "openToWork": "Open to Work"
+    },
+    "fr": {
+      "aboutTitle": "À propos de moi",
+      "skillsTitle": "Compétences & Expertise",
+      "programming": "Programmation",
+      "databases": "Bases de Données",
+      "bigdata": "Big Data & Analytics",
+      "devops": "DevOps & CI/CD",
+      "cloud": "Cloud Computing",
+      "softSkills": "Soft Skills",
+      "experienceTitle": "Expérience Professionnelle",
+      "educationTitle": "Formation",
+      "projectsTitle": "Projets Réalisés",
+      "certificationsTitle": "Certifications",
+      "contactTitle": "Me Contacter",
+      "downloadCV": "Télécharger CV",
+      "viewProject": "Voir Projet",
+      "viewCode": "Voir Code",
+      "sendMessage": "Envoyer",
+      "yourName": "Votre Nom",
+      "yourEmail": "Votre Email",
+      "yourMessage": "Votre Message",
+      "openToWork": "Disponible"
+    }
+  }
+}
