@@ -48,6 +48,7 @@
       "Python",
       "PHP",
       "SQL",
+      "R",
       "Shell/Bash",
       "HTML/CSS"
     ],
@@ -77,7 +78,6 @@
       "Linux"
     ],
     "cloud": [
-      "Azure",
       "AWS basics",
       "Cloud Architecture"
     ],
@@ -223,7 +223,12 @@
         "en": "Intelligent parking management system with Raspberry Pi, sensors, RFID and web supervision interface.",
         "fr": "Système de gestion de parking intelligent avec Raspberry Pi, capteurs, RFID et interface web de supervision."
       },
-      "tags": ["Python", "PHP", "Raspberry Pi", "IoT"],
+      "tags": [
+        "Python",
+        "PHP",
+        "Raspberry Pi",
+        "IoT"
+      ],
       "image": "/images/RPI1.png",
       "repoLink": "#",
       "demoLink": "#"
@@ -238,7 +243,12 @@
         "en": "Power BI visual interface displaying SAP production data on a real-time factory layout.",
         "fr": "Interface visuelle Power BI affichant les données de production SAP sur un layout d'usine en temps réel."
       },
-      "tags": ["PowerBI", "SAP", "DAX", "Data Viz"],
+      "tags": [
+        "PowerBI",
+        "SAP",
+        "DAX",
+        "Data Viz"
+      ],
       "image": "/images/WIP1.png",
       "repoLink": "#",
       "demoLink": "#"
@@ -253,7 +263,12 @@
         "en": "Dashboards combining SAP and HOROQUARTZ for production ratio and performance tracking.",
         "fr": "Tableaux de bord combinant SAP et HOROQUARTZ pour le suivi du ratio de production et de la performance."
       },
-      "tags": ["PowerBI", "SAP", "Excel", "ETL"],
+      "tags": [
+        "PowerBI",
+        "SAP",
+        "Excel",
+        "ETL"
+      ],
       "image": "/images/PERFO.png",
       "repoLink": "#",
       "demoLink": "#"
@@ -271,7 +286,11 @@
         "en": "Article shortage anticipation tool to optimize the supply chain.",
         "fr": "Outil d'anticipation des ruptures d'articles pour optimiser la chaîne d'approvisionnement."
       },
-      "tags": ["PowerBI", "Analytics", "SQL"],
+      "tags": [
+        "PowerBI",
+        "Analytics",
+        "SQL"
+      ],
       "image": "/images/ASP.png",
       "repoLink": "#",
       "demoLink": "#"
@@ -289,7 +308,12 @@
         "en": "Development of interactive Power BI dashboards for Smart Factory management. Centralization of production data via SQL Server to analyze critical KPIs (OEE, availability, quality), reduce downtime and optimize industrial productivity.",
         "fr": "Développement de tableaux de bord interactifs Power BI pour le pilotage de la Smart Factory. Centralisation des données de production via SQL Server pour analyser les KPIs critiques (TRS, disponibilité, qualité), réduire les temps d'arrêt et optimiser la productivité industrielle."
       },
-      "tags": ["PowerBI", "SQL Server", "Industrie 4.0", "Data Analysis"],
+      "tags": [
+        "PowerBI",
+        "SQL Server",
+        "Industrie 4.0",
+        "Data Analysis"
+      ],
       "image": "/images/CAD.png",
       "repoLink": "#",
       "demoLink": "#"
@@ -307,7 +331,12 @@
         "en": "Design and deployment of a web platform centralizing educational resources for the Big Data & Cloud Computing Master. The goal was to facilitate access to courses, tutorials and exams (Python, AI, Semantic Web) via an intuitive interface accessible to all students.",
         "fr": "Conception et déploiement d'une plateforme web centralisant les ressources pédagogiques du Master Big Data & Cloud Computing. L'objectif était de faciliter l'accès aux cours, travaux dirigés et examens (Python, IA, Web Sémantique) via une interface intuitive et accessible à tous les étudiants."
       },
-      "tags": ["HTML5", "CSS3", "JavaScript", "Firebase"],
+      "tags": [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "Firebase"
+      ],
       "image": "/images/bd2cLearning.png",
       "repoLink": "#",
       "demoLink": "https://bd2c.badrabba.com"
