@@ -6,7 +6,7 @@
 
 <br/>
 
-<img src="https://skillicons.dev/icons?i=python,java,js,sql,docker,kubernetes,azure,linux,git" />
+<img src="https://skillicons.dev/icons?i=python,java,js,docker,kubernetes,azure,linux,git" />
 
 </div>
 
